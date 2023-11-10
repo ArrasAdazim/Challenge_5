@@ -16,9 +16,9 @@ const carsHandler = new CarsHandler();
 //Cars
 app.post("/api/cars", fileCloudinary.single("foto"), carsHandler.createCars);
 
-app.get("/api/cars/all", carsHandler.getAllCars);
+app.get("/api/cars/", carsHandler.getAllCars);
 app.get("/api/cars/ukuran", carsHandler.getCarsUkuran);
-app.get("/api/cars/nama", carsHandler.getCarsNama);
+app.get("/api/cars/", carsHandler.getCarsNama);
 app.get("/api/cars/:id", carsHandler.getCarsById);
 app.delete("/api/cars/:id", carsHandler.deleteCars);
 app.put(

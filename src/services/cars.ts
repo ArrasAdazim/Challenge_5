@@ -16,7 +16,7 @@ class CarsService {
   }
 
   static async updateCarById(
-    queryId: number,
+    cars_id: number,
     car: CarsRequest
   ): Promise<Cars | null> {
     const carToUpdate: Cars = {
@@ -25,7 +25,7 @@ class CarsService {
       ukuran: car.ukuran,
       foto: car.foto,
     };
-    const updatedCar = await CarsRepository.updateCarById(queryId, carToUpdate);
+    const updatedCar = await CarsRepository.updateCarById(cars_id, carToUpdate);
     return updatedCar;
   }
   static async getAllCars(): Promise<Cars[]> {

@@ -48,13 +48,13 @@ class CarsRepository {
   }
 
   static async updateCarById(
-    queryId: number,
+    cars_id: number,
     car: CarsRequest
   ): Promise<Cars | null> {
-    const updateCar = await CarsEntity.query().findById(queryId);
+    const updateCar = await CarsEntity.query().findById(cars_id);
 
     if (updateCar) {
-      await CarsEntity.query().findById(queryId).patch({
+      await CarsEntity.query().findById(cars_id).patch({
         nama: car.nama,
         sewa: car.sewa,
         ukuran: car.ukuran,
